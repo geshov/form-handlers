@@ -1,0 +1,13 @@
+---
+import Base from "../layouts/Base.astro";
+import FormSubmit from "../components/Formsubmit.astro";
+
+const title = "FormSubmit";
+---
+
+<Base title={title}>
+  <div class="max-w-xl h-screen mx-auto flex flex-col justify-center gap-4">
+    <h1 class="text-2xl font-semibold">{title}</h1>
+    <FormSubmit />
+  </div>
+</Base>
