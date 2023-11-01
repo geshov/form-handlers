@@ -24,8 +24,8 @@ $to = filter_var($_GET["email"], FILTER_SANITIZE_EMAIL);
 
 $body = <<<END
 <div><strong>Имя</strong>: $name</div>
-<div><strong>Emal</strong>: $email</div>
-<div><strong>Tema</strong>: $subject</div>
+<div><strong>Email</strong>: $email</div>
+<div><strong>Тема</strong>: $subject</div>
 <div><strong>Сообщение</strong>: $message</div>
 END;
 
