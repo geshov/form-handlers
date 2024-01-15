@@ -3,8 +3,9 @@
   const submit = form.querySelector("[type='submit']");
   const action = form.dataset.action + form.dataset.email;
   form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    form.classList.add("form-validate");
     if (form.checkValidity()) {
-      event.preventDefault();
       submit.setAttribute("disabled", "");
       form.classList.remove("form-sended", "form-error");
       form.classList.add("form-sending");
@@ -28,7 +29,7 @@
           console.log("Сообщение отправлено.");
           setTimeout(() => {
             submit.removeAttribute("disabled");
-            form.classList.remove("form-sended");
+            form.classList.remove("form-validate", "form-sended");
             form.reset();
           }, form.dataset.timeout);
         })

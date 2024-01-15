@@ -1,5 +1,5 @@
 <form
-  class="form grid md:grid-cols-2 gap-4"
+  class="form group grid md:grid-cols-2 gap-4"
   data-action="https://formsubmit.co/ajax/"
   data-email="contact@mitorun.studio"
   data-timeout="8000"
@@ -7,21 +7,57 @@
   <input type="hidden" name="_subject" value="Новое сообщение с сайта..." />
   <input type="hidden" name="_template" value="table" />
   <input type="text" name="_honey" style="display:none" />
-  <input type="text" name="name" placeholder="Имя" required />
-  <input type="email" name="email" placeholder="Email" required />
-  <input
-    class="md:col-span-2"
-    type="text"
-    name="subject"
-    placeholder="Тема"
-    required
-  />
-  <textarea
-    class="md:col-span-2"
-    rows="5"
-    name="message"
-    placeholder="Сообщение"
-    required></textarea>
+  <div>
+    <input
+      class="peer w-full"
+      type="text"
+      name="name"
+      placeholder="Имя"
+      required
+    />
+    <div
+      class="hidden group-[.form-validate]:peer-invalid:block text-sm text-red-500">
+      Введите своё имя
+    </div>
+  </div>
+  <div>
+    <input
+      class="peer w-full"
+      type="email"
+      name="email"
+      placeholder="Email"
+      required
+    />
+    <div
+      class="hidden group-[.form-validate]:peer-invalid:block text-sm text-red-500">
+      Введите свой Email-адрес
+    </div>
+  </div>
+  <div class="md:col-span-2">
+    <input
+      class="peer w-full"
+      type="text"
+      name="subject"
+      placeholder="Тема"
+      required
+    />
+    <div
+      class="hidden group-[.form-validate]:peer-invalid:block text-sm text-red-500">
+      Введите тему сообщения
+    </div>
+  </div>
+  <div class="md:col-span-2">
+    <textarea
+      class="peer w-full"
+      rows="5"
+      name="message"
+      placeholder="Сообщение"
+      required></textarea>
+    <div
+      class="hidden group-[.form-validate]:peer-invalid:block text-sm text-red-500">
+      Сообщение не может быть пустым
+    </div>
+  </div>
   <button class="text-white bg-blue-600 py-2" type="submit">Отправить</button>
 </form>
 
